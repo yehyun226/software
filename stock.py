@@ -2,8 +2,8 @@ import os
 import pandas as pd
 import streamlit as st
 
-data_dir = "/Users/yehyun/Desktop/data"
-img_dir = "/Users/yehyun/Desktop/data/image"
+data_dir = "data"
+img_dir = os.path.join(data_dir, "image")
 dates = [
     d for d in os.listdir(data_dir)
     if os.path.isdir(os.path.join(data_dir, d)) and d.isdigit()
@@ -19,7 +19,6 @@ image = {
 
 
 st.title("주식 투자 도우미")
-
 date = st.sidebar.selectbox("날짜 선택", ["20250929", "20250930", "20251001", "20251002", "20251010"])
 
 
